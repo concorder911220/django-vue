@@ -154,22 +154,4 @@ The [`Procfile`](/Procfile) will run Django migrations and then launch Django'S 
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/gtalarico/django-vue-template)
 
-## Static Assets
 
-See `settings.dev` and [`vue.config.js`](/vue.config.js) for notes on static assets strategy.
-
-This template implements the approach suggested by Whitenoise Django.
-For more details see [WhiteNoise Documentation](http://whitenoise.evans.io/en/stable/django.html)
-
-It uses Django Whitenoise to serve all static files and Vue bundled files at `/static/`.
-While it might seem inefficient, the issue is immediately solved by adding a CDN
-with Cloudfront or similar.
-Use [`vue.config.js`](/vue.config.js) > `baseUrl` option to set point all your assets to the CDN,
-and then set your CDN's origin back to your domains `/static` url.
-
-Whitenoise will serve static files to your CDN once, but then those assets are cached
-and served directly by the CDN.
-
-This allows for an extremely simple setup without the need for a separate static server.
-
-[Cloudfront Setup Wiki](https://github.com/gtalarico/django-vue-template/wiki/Setup-CDN-on-Cloud-Front)
