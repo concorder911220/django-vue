@@ -15,52 +15,41 @@ data at `/api/`, and static files at `/static/`. Django admin panel is also avai
 The application templates from Vue CLI `create` and Django `createproject` are kept as close as possible to their
 original state, except where a different configuration is needed for better integration of the two frameworks.
 
-#### Alternatives
-
-If this setup is not what you are looking for, you might want look at other similar projects:
-
-* [ariera/django-vue-template](https://github.com/ariera/django-vue-template)
-* [vchaptsev/cookiecutter-django-vue](https://github.com/vchaptsev/cookiecutter-django-vue)
-
-Prefer Flask? Checkout my [gtalarico/flask-vuejs-template](https://github.com/gtalarico/flask-vuejs-template)
-
 ### Demo
 
 [Live Demo](https://django-vue-template-demo.herokuapp.com/)
 
 ### Includes
 
-* Django
-* Django REST framework
-* Django Whitenoise, CDN Ready
-* Vue CLI 3
-* Vue Router
-* Vuex
-* Gunicorn
-* Configuration for Heroku Deployment
-
+- Django
+- Django REST framework
+- Django Whitenoise, CDN Ready
+- Vue CLI 3
+- Vue Router
+- Vuex
+- Gunicorn
+- Configuration for Heroku Deployment
 
 ### Template Structure
 
-
-| Location             |  Content                                   |
-|----------------------|--------------------------------------------|
-| `/backend`           | Django Project & Backend Config            |
-| `/backend/api`       | Django App (`/api`)                        |
-| `/src`               | Vue App .                                  |
-| `/src/main.js`       | JS Application Entry Point                 |
-| `/public/index.html` | [Html Application Entry Point](https://cli.vuejs.org/guide/html-and-static-assets.html) (`/`)         |
-| `/public/static`     | Static Assets                              |
-| `/dist/`             | Bundled Assets Output (generated at `yarn build`) |
+| Location             | Content                                                                                       |
+| -------------------- | --------------------------------------------------------------------------------------------- |
+| `/backend`           | Django Project & Backend Config                                                               |
+| `/backend/api`       | Django App (`/api`)                                                                           |
+| `/src`               | Vue App .                                                                                     |
+| `/src/main.js`       | JS Application Entry Point                                                                    |
+| `/public/index.html` | [Html Application Entry Point](https://cli.vuejs.org/guide/html-and-static-assets.html) (`/`) |
+| `/public/static`     | Static Assets                                                                                 |
+| `/dist/`             | Bundled Assets Output (generated at `yarn build`)                                             |
 
 ## Prerequisites
 
 Before getting started you should have the following installed and running:
 
-- [X] Yarn - [instructions](https://yarnpkg.com/en/docs/install)
-- [X] Vue CLI 3 - [instructions](https://cli.vuejs.org/guide/installation.html)
-- [X] Python 3 - [instructions](https://wiki.python.org/moin/BeginnersGuide)
-- [X] Pipenv - [instructions](https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv)
+- [x] Yarn - [instructions](https://yarnpkg.com/en/docs/install)
+- [x] Vue CLI 3 - [instructions](https://cli.vuejs.org/guide/installation.html)
+- [x] Python 3 - [instructions](https://wiki.python.org/moin/BeginnersGuide)
+- [x] Pipenv - [instructions](https://pipenv.readthedocs.io/en/latest/install/#installing-pipenv)
 
 ## Setup Template
 
@@ -70,6 +59,7 @@ $ cd django-vue-template
 ```
 
 Setup
+
 ```
 $ yarn install
 $ pipenv install --dev && pipenv shell
@@ -104,6 +94,7 @@ and the page will not reload on changes.
 $ yarn build
 $ python manage.py runserver
 ```
+
 ## Pycharm additional configuration
 
 Follow this guide to ensure you have pipenv setup
@@ -126,7 +117,7 @@ Click Apply then Ok
 
 ## Deploy
 
-* Set `ALLOWED_HOSTS` on [`backend.settings.prod`](/backend/settings/prod.py)
+- Set `ALLOWED_HOSTS` on [`backend.settings.prod`](/backend/settings/prod.py)
 
 ### Heroku Server
 
@@ -149,9 +140,3 @@ This will create the bundled `dist` folder which will be served by whitenoise.
 The python buildpack will detect the [`Pipfile`](/Pipfile) and install all the python dependencies.
 
 The [`Procfile`](/Procfile) will run Django migrations and then launch Django'S app using gunicorn, as recommended by heroku.
-
-##### Heroku One Click Deploy
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/gtalarico/django-vue-template)
-
-
